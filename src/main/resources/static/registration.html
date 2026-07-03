@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — VERTEX'26</title>
+<meta name="description" content="Register for VERTEX'26 — choose your event track and secure your seat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">V</span>
+      <span>VERTEX'26<small>Technical Symposium</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="registration.html" class="btn btn-primary nav-cta active">Register Now</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-bottom: 1rem;">
+    <div class="section-inner">
+      <span class="eyebrow">Two minutes to register</span>
+      <h1 class="mt-lg" style="font-size: clamp(1.9rem, 4vw, 2.8rem);">Register for VERTEX'26</h1>
+      <p style="color: var(--text-secondary); margin-top: 0.9rem; max-width: 620px;">Fill in your details below. You'll receive a confirmation email with your entry pass and track-specific instructions.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="form-wrap">
+
+        <form class="form-card" id="registration-form" novalidate>
+          <div class="form-row-split">
+            <div class="form-row" data-field="fullName">
+              <label for="fullName">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Aditi Rao" required minlength="3">
+              <span class="field-error"></span>
+            </div>
+            <div class="form-row" data-field="college">
+              <label for="college">College / Institution <span class="req">*</span></label>
+              <input type="text" id="college" name="college" placeholder="e.g. State College of Engineering" required minlength="3">
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row-split">
+            <div class="form-row" data-field="department">
+              <label for="department">Department <span class="req">*</span></label>
+              <select id="department" name="department" required>
+                <option value="" disabled selected>Select department</option>
+                <option value="cse">Computer Science &amp; Engineering</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics &amp; Communication</option>
+                <option value="eee">Electrical &amp; Electronics</option>
+                <option value="mech">Mechanical Engineering</option>
+                <option value="civil">Civil Engineering</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-row" data-field="track">
+              <label for="track">Event Track <span class="req">*</span></label>
+              <select id="track" name="track" required>
+                <option value="" disabled selected>Select a track</option>
+                <option value="coding">Competitive Coding</option>
+                <option value="paper">Paper Presentation</option>
+                <option value="webdev">Web Development Sprint</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row-split">
+            <div class="form-row" data-field="email">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-row" data-field="phone">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required pattern="[6-9][0-9]{9}">
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Submit Registration</button>
+          <p class="form-note">By registering, you agree to receive event updates via email and SMS.</p>
+          <div class="form-status" id="form-status" role="status"></div>
+        </form>
+
+        <aside>
+          <div class="frame-block" data-tag="Before you register">
+            <h3 style="font-size: 1.05rem; margin-bottom: 1rem;">Good to know</h3>
+            <ul class="timeline-list">
+              <li><span class="timeline-year">01</span> Registration is free for students of the host college; outstation participants pay a nominal fee at check-in.</li>
+              <li><span class="timeline-year">02</span> You may register for one track at a time — submit this form again to add another.</li>
+              <li><span class="timeline-year">03</span> Team events (Web Dev Sprint) require every member to register individually and share a team name at check-in.</li>
+              <li><span class="timeline-year">04</span> Bring a valid college ID card on the day of the event.</li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand"><span class="brand-mark">V</span><span>VERTEX'26</span></div>
+      <p>The annual technical symposium of the Department of Computer Science &amp; Engineering.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Participate</h5>
+      <ul>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:vertex26@collegecse.edu">vertex26@collegecse.edu</a></li>
+        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 VERTEX — Dept. of CSE. All rights reserved.</span>
+    <span>Built by the Student Technical Council</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

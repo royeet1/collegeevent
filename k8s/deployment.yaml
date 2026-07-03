@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: collegeevent-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: collegeevent
+  template:
+    metadata:
+      labels:
+        app: collegeevent
+    spec:
+      containers:
+      - name: collegeevent
+        image: collegeevent:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081
