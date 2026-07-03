@@ -15,27 +15,17 @@ pipeline {
             }
         }
 
-        stage('Check Environment') {
-            steps {
-                bat 'echo ================= PATH ================='
-                bat 'echo %PATH%'
-                bat 'echo ========================================'
-                bat 'where docker'
-                bat 'docker --version'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t collegeevent:v1 .'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t collegeevent:v1 .'
             }
         }
 
         stage('Deploy to Kubernetes') {
             steps {
-                bat 'kubectl apply -f k8s\\deployment.yaml'
-                bat 'kubectl apply -f k8s\\service.yaml'
-                bat 'kubectl rollout restart deployment/collegeevent-deployment'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe" apply -f k8s\\deployment.yaml'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe" apply -f k8s\\service.yaml'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe" rollout restart deployment/collegeevent-deployment'
             }
         }
     }
