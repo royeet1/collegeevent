@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:\\Windows\\System32;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Java\\jdk-25.0.3\\bin;${env.PATH}"
+    }
+
     stages {
 
         stage('Checkout') {
@@ -17,15 +21,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t collegeevent:v1 .'
+                bat 'docker build -t collegeevent:v1 .'
             }
         }
 
         stage('Deploy to Kubernetes') {
             steps {
-                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe" apply -f k8s\\deployment.yaml'
-                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe" apply -f k8s\\service.yaml'
-                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe" rollout restart deployment/collegeevent-deployment'
+                bat 'kubectl apply -f k8s\\deployment.yaml'
+                bat 'kubectl apply -f k8s\\service.yaml'
+                bat 'kubectl rollout restart deployment/collegeevent-deployment'
             }
         }
     }
