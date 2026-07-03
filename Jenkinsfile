@@ -15,6 +15,16 @@ pipeline {
             }
         }
 
+        stage('Check Environment') {
+            steps {
+                bat 'echo ================= PATH ================='
+                bat 'echo %PATH%'
+                bat 'echo ========================================'
+                bat 'where docker'
+                bat 'docker --version'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 bat 'docker build -t collegeevent:v1 .'
